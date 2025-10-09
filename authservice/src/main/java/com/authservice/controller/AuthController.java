@@ -87,7 +87,7 @@ public class AuthController {
 	 }
 	 
 	 @GetMapping("/get-user")
-	 public User getUser(@RequestParam String username) {
+	 public User getUserByUserName(@RequestParam String username) {
 		 return userRepository.findByUsername(username);
 	 }
 
