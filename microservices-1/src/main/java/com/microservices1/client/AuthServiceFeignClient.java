@@ -11,5 +11,5 @@ import com.microservices1.dto.User;
 public interface AuthServiceFeignClient {
 
     @GetMapping("/api/v1/auth/get-user")
-    User getUserByUsername(@RequestParam("username") String username, @RequestHeader("Authorization") String token);
+    User findByUsername(@RequestParam("username") String username, @RequestHeader("Authorization") String token);
 }
