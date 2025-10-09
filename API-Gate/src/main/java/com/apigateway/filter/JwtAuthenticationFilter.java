@@ -17,9 +17,9 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
+public class JwtAuthenticationFilter implements GlobalFilter {
 
-    private static final String SECRET_KEY = "secret12345";
+    private static final String SECRET_KEY = "my-super-secret-key";
 
     private static final List<String> openApiEndpoints = List.of(
             "/auth/api/v1/auth/login",
@@ -27,6 +27,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
     );
 
     private static final Map<String, List<String>> protectedEndpointsWithRoles = Map.of(
+          //  "/auth/api/v1/message/welcome", List.of("ROLE_ADMIN")
     	    "/micro1/message", List.of("ROLE_ADMIN")
     	);
 
